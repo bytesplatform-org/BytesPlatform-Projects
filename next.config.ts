@@ -58,6 +58,10 @@ const nextConfig: NextConfig = {
         source: `/case-studies/:slug(${CASE_STUDIES})`,
         headers: [{ key: "Content-Disposition", value: 'inline; filename="BytesPlatform-:slug-case-study.pdf"' }],
       },
+      {
+        source: "/:path*",
+        headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }],
+      },
     ];
   },
 };
